@@ -1,0 +1,34 @@
+{
+    "TileCollection": [
+        {
+            "url": "http://localhost/fiorigstn/WebContent/?appName=GST00001&userID=TaxPayer1&userSpecific=Yes&userRole=TaxPayer&company=37ABCDE9552F3Z4",
+            "icon": "business-objects-experience",
+            "title": "GSTR1: Upload Sales data"
+        },
+        {
+            "url": "http://localhost/fiorigstn/WebContent/?appName=GST00002&userID=TaxPayer1&userSpecific=Yes&userRole=TaxPayer&company=37ABCDE9552F3Z4",
+            "icon": "cart",
+            "number": "12",
+            "title": "GSTR2: Download Invoices data from GSTn",
+            "info": "Overdue",
+            "infoState": "Error"
+        },
+        {
+            "url": "http://localhost/fiorigstn/WebContent/?appName=GST00014&userID=TaxPayer1&userSpecific=Yes&userRole=TaxPayer&company=37ABCDE9552F3Z4",
+            "icon": "repost",
+            "number": 0,
+            "title": "GSTR1 Summary and Return Submission",
+            "info": "12 Days Left",
+            "infoState": "Success"
+        },
+        {
+            "url": "GST00004",
+            "icon": "travel-expense-report",
+            "number": "281",
+            "numberUnit": "euro",
+            "title": "Get GSTR1 Summary",
+            "info": "1 day ago",
+            "infoState": "Warning"
+        }
+    ]
+}

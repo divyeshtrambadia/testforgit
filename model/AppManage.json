@@ -1,0 +1,49 @@
+{  
+   "collection":[  
+      {  
+         "App":"COUNCIL001",
+         "description":"Benefit Fraud",
+         "module":"08 Report Fraud",
+         "area":"My City",
+         "seqno":"201",
+         "eStatus":"Active",
+         "iConClass":"icon-fire-fill"
+      },
+      {  
+         "App":"COUNCIL002",
+         "description":"Change in Circumstances",
+         "module":"06 Benefits",
+         "area":"My City",
+         "seqno":"202",
+         "eStatus":"Active",
+         "iConClass":"icon-fire-fill"
+      },
+      {  
+         "App":"COUNCIL003",
+         "description":"Mini Recycling center",
+         "module":"07 Bin and recycling",
+         "area":"My City",
+         "seqno":"203",
+         "eStatus":"Active",
+         "iConClass":"icon-fire-fill"
+      },
+      {  
+         "App":"COUNCIL005",
+         "description":"Bulky Collection",
+         "module":"07 Bin and recycling",
+         "area":"My City",
+         "seqno":"205",
+         "eStatus":"Active",
+         "iConClass":"icon-fire-fill"
+      },
+      {  
+         "App":"COUNCIL006",
+         "description":"Garden Waste Sack collection",
+         "module":"07 Bin and recycling",
+         "area":"My City",
+         "seqno":"206",
+         "eStatus":"Active",
+         "iConClass":"icon-fire-fill"
+      }
+   ]
+}

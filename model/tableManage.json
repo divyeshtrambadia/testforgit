@@ -1,0 +1,35 @@
+{  
+    "collection": [  
+            {  
+                "Title": "Admin Manage"
+            },
+            {  
+                "Title": "Users Manage"
+            },
+            {  
+                "Title": "Role Manage"
+            },
+            {  
+                "Title": "App Role Manage"
+            },
+            {  
+                "Title": "App Manage"
+            },
+            {  
+                "Title": "Possible Value Manage"
+            },
+            {  
+                "Title": "Initial Value Manage"
+            },
+            {  
+                "Title": "Graph Value Manage"
+            },
+            {  
+                "Title": "Map Table Manage"
+            },
+            {  
+                "Title": "Config files Manage"
+            }
+        ]
+    
+}
