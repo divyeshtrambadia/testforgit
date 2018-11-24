@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<Document>
+    <Identification>
+        <Object>EMP00004</Object>
+        <PartnerNo>SmartPhone</PartnerNo>
+    </Identification>
+    <ApplicationControls>
+        <CreateNewItems>N</CreateNewItems>
+        <CreateNewFields/>
+        <PossibleValue>Y</PossibleValue>
+        <PossibleValueFields>
+            <DataField>VendorName</DataField>
+            <DataField>UoM</DataField>
+            <DataField>Category</DataField>
+			
+            <DataField>State</DataField>
+            <DataField>Country</DataField>
+            <DataField>Office</DataField>
+            <DataField>CostObject</DataField>
+            <DataField>GLAccount</DataField>
+            <DataField>VATRate</DataField>
+
+
+            <DataField>Currency</DataField>
+            <DataField>PaymentOption</DataField>
+            <DataField>Status</DataField>
+        </PossibleValueFields>
+        <AttachmentFunction>Y</AttachmentFunction>
+        <ServerUpdate>Y</ServerUpdate>
+        <ColorCoding>Y</ColorCoding>
+        <ColorCodedFields>
+            <DataField>Status</DataField>
+        </ColorCodedFields>
+        <PaymentDetails>
+            <DataField>PaymentAmount</DataField>
+            <DataField>Currency</DataField>
+            <DataField>PaymentOption</DataField>
+            <DataField>TransactionID</DataField>
+            <DataField>TransactionStatus</DataField>
+        </PaymentDetails>
+        <CalculatedFields>
+            <Expression result="NetValue" Sequence="1">
+                <Operation name="Price" role="operand" Sequence="1"/>
+                <Operation name="*" role="operator" Sequence="2"/>
+                <Operation name="SCQty" role="operand" Sequence="3"/>
+            </Expression>
+            <Expression result="VATVal" Sequence="2">
+                <Operation name="(" role="operator" Sequence="1"/>
+                <Operation name="Price" role="operand" Sequence="2"/>
+                <Operation name="*" role="operator" Sequence="3"/>
+                <Operation name="SCQty" role="operand" Sequence="4"/>
+                <Operation name="*" role="operator" Sequence="5"/>
+                <Operation name="VATRate" role="operand" Sequence="6"/>
+                <Operation name=")" role="operator" Sequence="7"/>
+                <Operation name="/" role="operator" Sequence="8"/>
+                <Operation name="100" role="operand" Sequence="9"/>
+            </Expression>
+            <Expression result="GrossValue" Sequence="3">
+                <Operation name="(" role="operator" Sequence="1"/>
+                <Operation name="Price" role="operand" Sequence="2"/>
+                <Operation name="*" role="operator" Sequence="3"/>
+                <Operation name="SCQty" role="operand" Sequence="4"/>
+                <Operation name=")" role="operator" Sequence="5"/>
+                <Operation name="+" role="operator" Sequence="6"/>
+                <Operation name="(" role="operator" Sequence="7"/>
+                <Operation name="(" role="operator" Sequence="8"/>
+                <Operation name="Price" role="operand" Sequence="9"/>
+                <Operation name="*" role="operator" Sequence="10"/>
+                <Operation name="SCQty" role="operand" Sequence="11"/>
+                <Operation name="*" role="operator" Sequence="12"/>
+                <Operation name="VATRate" role="operand" Sequence="13"/>
+                <Operation name=")" role="operator" Sequence="14"/>
+                <Operation name="/" role="operator" Sequence="15"/>
+                <Operation name="100" role="operand" Sequence="16"/>
+                <Operation name=")" role="operator" Sequence="17"/>
+            </Expression>
+        </CalculatedFields>
+        <ApplicationFilters>
+			
+            <Parameter name="Status">
+                <value name="Submitted" visibility="Include"/>
+            </Parameter>
+        </ApplicationFilters>
+        <ReadGeoCode>N</ReadGeoCode>
+        <GoogleMap>N</GoogleMap>
+        <GoogleMapTab/>
+        <MapFields/>
+        <RecordDownload>No</RecordDownload>
+        <FieldLabel>SLabel</FieldLabel>
+        <SimpleValFileUpload>Y</SimpleValFileUpload>
+        <BOTSetup>
+            <ListCard>Y</ListCard>
+            <CardButton>
+                <element postback="Assign US 123" text="Assign"/>
+                <element postback="Record Story Points for US 123" text="Record Story"/>
+                <element postback="Move US 123 to next Stage" text="Move to Next Stage"/>
+                <element postback="Link US 123 to Sprint" text="Link to Sprint"/>
+                <element postback="Record Blocker for US 123" text="Record Blocker"/>
+            </CardButton>
+        </BOTSetup>
+    </ApplicationControls>
+    <ListScreenControls>
+        <ItemActionButtons>
+            <Action name="Approve" flag="Show" theme="Accept" linkField="Status" value="Approved" label="Approve"/>
+            <Action name="Reject" flag="Show" theme="Reject" linkField="Status" value="Rejected" label="Reject"/>
+        </ItemActionButtons>
+    </ListScreenControls>
+    <Filters>
+        <Sorting>
+            <DataField>VendorName</DataField>
+            <DataField>ID</DataField>
+            <DataField>Plant</DataField>
+            <DataField>PaymentTerm</DataField>
+            <DataField>SCDate</DataField>
+            <DataField>Category</DataField>
+            <DataField>Details</DataField>
+            <DataField>SCQty</DataField>
+            <DataField>UoM</DataField>
+            <DataField>Price</DataField>
+            <DataField>NetValue</DataField>
+            <DataField>VATRate</DataField>
+            <DataField>VATVal</DataField>
+            <DataField>GrossValue</DataField>
+            <DataField>Budget</DataField>
+            <DataField>BudgetUsed</DataField>
+            <!--<DataField>Currency</DataField>-->
+            <DataField>Office</DataField>
+            <DataField>DeliveryDt</DataField>
+            <DataField>DelTo</DataField>
+            <DataField>DelStreet</DataField>
+            <DataField>DelCity</DataField>
+            <DataField>State</DataField>
+            <DataField>DelPostCode</DataField>
+            <DataField>Country</DataField>
+            <DataField>DelPhone</DataField>
+            <DataField>DelEmail</DataField>
+            <DataField>DeliveryInstr</DataField>
+            <DataField>OtherInfo</DataField>
+            <DataField>CostType</DataField>
+            <DataField>CostObject</DataField>
+            <DataField>CostType</DataField>
+            <DataField>GLAccount</DataField>
+            <DataField>Status</DataField>
+            <DataField>PaymentAmount</DataField>
+			
+            <DataField>PaymentOption</DataField>
+        </Sorting>
+        <DateFilter>
+            <DataField>SCDate</DataField>
+            <Sequence>2</Sequence>
+            <Options>In Last 1 day</Options>
+            <Options>In Last 3 day</Options>
+            <Options>In Last 7 day</Options>
+            <Options>In Last 15 day</Options>
+            <Options>In Last 30 day</Options>
+        </DateFilter>
+        <DataFilter>
+            <DataField>VendorName</DataField>
+            <DataField>ID</DataField>
+            <DataField>Status</DataField>
+            <DataField>Plant</DataField>
+            <DataField>PaymentTerm</DataField>
+            <DataField>SCDate</DataField>
+            <DataField>Category</DataField>
+            <DataField>Details</DataField>
+            <DataField>SCQty</DataField>
+            <DataField>UoM</DataField>
+            <DataField>Price</DataField>
+            <DataField>NetValue</DataField>
+            <DataField>VATRate</DataField>
+            <DataField>VATVal</DataField>
+            <DataField>GrossValue</DataField>
+            <DataField>Budget</DataField>
+            <DataField>BudgetUsed</DataField>
+            <!--<DataField>Currency</DataField>-->
+            <DataField>Office</DataField>
+            <DataField>DeliveryDt</DataField>
+            <DataField>PaymentAmount</DataField>
+			
+            <DataField>PaymentOption</DataField>
+            <Sequence>3</Sequence>
+            <Popup>Active</Popup>
+        </DataFilter>
+    </Filters>
+    <Graph>
+        <Dimension>
+            <DimensionDetail>
+                <DropDownValue>Status</DropDownValue>
+                <Title>Analysis based on Document Status</Title>
+                <SLabel>Status</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>VendorName</DropDownValue>
+                <Title>Analysis based on Document VendorName</Title>
+                <SLabel>Vendor Name</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>Category</DropDownValue>
+                <Title>Analysis based on Document Category</Title>
+                <SLabel>Category</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>CostObject</DropDownValue>
+                <Title>Analysis based on Document CostObject</Title>
+                <SLabel>Cost Object</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>CostType</DropDownValue>
+                <Title>Analysis based on Document CostType</Title>
+                <SLabel>Cost Type</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>GLAccount</DropDownValue>
+                <Title>Analysis based on Document GLAccount</Title>
+                <SLabel>GL Account</SLabel>
+            </DimensionDetail>
+			
+            <DimensionDetail>
+                <DropDownValue>VATRate</DropDownValue>
+                <Title>Analysis based on Document VATRate</Title>
+                <SLabel>VAT Rate</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>DelCity</DropDownValue>
+                <Title>Analysis based on Document DelCity</Title>
+                <SLabel>Delivery City</SLabel>
+            </DimensionDetail>
+            <DimensionDetail>
+                <DropDownValue>DelPostCode</DropDownValue>
+                <Title>Analysis based on Document DelPostCode</Title>
+                <SLabel>Delivery Post Code</SLabel>
+            </DimensionDetail>
+        </Dimension>
+        <KeyFigures>
+            <KeyFigureDetail>
+                <DropDownValue>Number of Record</DropDownValue>
+                <Action>Count</Action>
+                <DataField>ID</DataField>
+                <SLabel>Number of Record</SLabel>
+            </KeyFigureDetail>
+            <KeyFigureDetail>
+                <DropDownValue>Sum of NetValue</DropDownValue>
+                <Action>Sum</Action>
+                <DataField>NetValue</DataField>
+                <SLabel>Sum of Net Value</SLabel>
+            </KeyFigureDetail>
+            <KeyFigureDetail>
+                <DropDownValue>Sum of GrossValue</DropDownValue>
+                <Action>Sum</Action>
+                <DataField>GrossValue</DataField>
+                <SLabel>Sum of Gross Value</SLabel>
+            </KeyFigureDetail>
+            <KeyFigureDetail>
+                <DropDownValue>Sum of VATVal</DropDownValue>
+                <Action>Sum</Action>
+                <DataField>VATVal</DataField>
+                <SLabel>Sum of VAT Value</SLabel>
+            </KeyFigureDetail>
+        </KeyFigures>
+    </Graph>
+    <DetailPageControl>
+        <DetailPageTab>Active</DetailPageTab>
+        <TabDetails>
+            <Tab value="Tab1" name="SC" type="Field" fioriicon="notes"/>
+            <Tab value="Tab2" name="Delivery" type="Field" fioriicon="calendar"/>
+            <!--<Tab value="Tab3" name="Assignment" type="Graph" fioriicon="history"/>-->
+			
+        </TabDetails>
+    </DetailPageControl>
+    <Title>
+        <ApplicationTitle>SC Approval</ApplicationTitle>
+        <DetailTitle>SC Approval</DetailTitle>
+    </Title>
+    <FieldDefinition>
+        <element name="ID" type="string" width="20" Option="" SLabel="ID" LLabel="" Currency="No"/>
+        <element name="VendorName" type="string" width="50" Option="" SLabel="Vendor Name" LLabel="" Currency="No"/>
+        <element name="Plant" type="string" width="20" Option="" SLabel="Plant" LLabel="" Currency="No"/>
+        <element name="PaymentTerm" type="string" width="20" Option="" SLabel="Payment Term" LLabel="" Currency="No"/>
+        <!--<element name="PaymentTerm" type="string" width="20"/>-->
+        <element name="SCDate" type="Date" width="10" Option="" SLabel="Shopping Cart Date" LLabel="" Currency="No"/>
+        <!--<element name="Category" type="string" width="50"/>-->
+        <element name="Category" type="string" width="50" Option="" SLabel="Category" LLabel="" Currency="No"/>
+        <element name="Details" type="string" width="50" Option="" SLabel="Details" LLabel="" Currency="No"/>
+        <element name="SCQty" type="string" width="10" Option="" SLabel="Shopping Cart Quantity" LLabel="" Currency="No"/>
+        <element name="UoM" type="string" width="10" Option="" SLabel="Unit of Measurement" LLabel="" Currency="No"/>
+        <element name="Price" type="string" width="50" Option="" SLabel="Price" LLabel="" Currency="No"/>
+        <element name="NetValue" type="string" width="50" Option="" SLabel="Net Value" LLabel="" Currency="No"/>
+        <element name="VATRate" type="string" width="10" Option="" SLabel="VAT Rate" LLabel="" Currency="No"/>
+        <element name="VATVal" type="string" width="50" Option="" SLabel="VAT Value" LLabel="" Currency="No"/>
+        <element name="GrossValue" type="string" width="50" Option="" SLabel="Gross Value" LLabel="" Currency="No"/>
+        <element name="Budget" type="string" width="10" Option="" SLabel="Budget" LLabel="" Currency="No"/>
+		
+        <element name="Status" type="string" width="20" Option="" SLabel="Status" LLabel="" Currency="No"/>
+        <element name="Office" type="string" width="50" Option="" SLabel="Office" LLabel="" Currency="No"/>
+        <element name="CostObject" type="string" width="50" Option="" SLabel="Cost Object" LLabel="" Currency="No"/>
+        <element name="CostType" type="string" width="50" Option="" SLabel="Cost Type" LLabel="" Currency="No"/>
+        <element name="GLAccount" type="string" width="50" Option="" SLabel="GL Account" LLabel="" Currency="No"/>
+        <element name="OtherInfo" type="string" width="500" Option="" SLabel="Other Information" LLabel="" Currency="No"/>
+        <element name="DeliveryDt" type="Date" width="10" Option="" SLabel="Delivery Date" LLabel="" Currency="No"/>
+        <element name="DelTo" type="string" width="50" Option="" SLabel="Delivery To" LLabel="" Currency="No"/>
+        <element name="DelStreet" type="string" width="50" Option="" SLabel="Delivery Street" LLabel="" Currency="No"/>
+        <element name="DelCity" type="string" width="50" Option="" SLabel="Delivery City" LLabel="" Currency="No"/>
+        <element name="State" type="string" width="50" Option="" SLabel="State" LLabel="" Currency="No"/>
+        <element name="DelPostCode" type="string" width="20" Option="" SLabel="Delivery Post Code" LLabel="" Currency="No"/>
+        <element name="Country" type="string" width="50" Option="" SLabel="Country" LLabel="" Currency="No"/>
+        <element name="DelPhone" type="string" width="50" Option="" SLabel="Delivery Phone" LLabel="" Currency="No"/>
+        <element name="DelEmail" type="string" width="50" Option="" SLabel="Delivery Email" LLabel="" Currency="No"/>
+        <element name="DeliveryInstr" type="string" width="50" Option="" SLabel="Delivery Instructor" LLabel="" Currency="No"/>
+        <element name="BudgetUsed" type="string" width="20" Option="" SLabel="Budget Used" LLabel="" Currency="No"/>
+        <element name="PaymentAmount" type="string" width="50" Option="" SLabel="Payment Amount" LLabel="" Currency="No"/>
+        <element name="Currency" type="string" width="50" Option="" SLabel="Currency" LLabel="" Currency="No"/>
+        <element name="PaymentOption" type="string" width="50" Option="" SLabel="Payment Option" LLabel="" Currency="No"/>
+        <element name="TransactionID" type="string" width="50" Option="" SLabel="Transaction ID" LLabel="" Currency="No"/>
+        <element name="TransactionStatus" type="string" width="50" Option="" SLabel="Transaction Status" LLabel="" Currency="No"/>
+        <element name="VATPer" type="Num,0" width="100" Option="" SLabel="VAT Percentage" LLabel="" Currency="No"/>
+    </FieldDefinition>
+    <ListField>
+        <element name="ID" ListField="Display" Sequence="1"/>
+        <element name="VendorName" ListField="Display" Sequence="1"/>
+        <element name="SCDate" ListField="Display" Sequence="1"/>
+        <element name="GrossValue" ListField="Display" Sequence="1"/>
+		
+        <element name="Status" ListField="Display" Sequence="1"/>
+        <element name="TransactionStatus" ListField="Display" Sequence="20"/>
+    </ListField>
+    <DetailScreen>
+        <element name="ID" Tab="None" Sequence="1" Mode="Display"/>
+        <element name="VendorName" Tab="None" Sequence="1" Mode="Display"/>
+        <element name="SCDate" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="Category" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="Details" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="SCQty" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="UoM" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="Price" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="NetValue" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="VATRate" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="VATVal" Tab="Tab1" Sequence="1" Mode="Display"/>
+        <element name="GrossValue" Tab="Tab1" Sequence="1" Mode="Display"/>
+		
+        <element name="DeliveryDt" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="DelTo" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="DelStreet" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="DelCity" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="State" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="DelPostCode" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="Country" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="DelPhone" Tab="Tab2" Sequence="1" Mode="Display"/>
+		
+		
+		
+		
+        <element name="OtherInfo" Tab="Tab2" Sequence="1" Mode="Display"/>
+        <element name="Status" Tab="None" Sequence="1" Mode="Edit"/>
+		
+		
+		
+		
+		
+        <element name="CostObject" Tab="Tab2" Sequence="1" Mode="Display"/>
+    </DetailScreen>
+</Document>
